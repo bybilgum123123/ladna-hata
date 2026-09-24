@@ -1,0 +1,41 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+
+async function capture(browser, width, height, filename) {
+  const context = await browser.newContext({ viewport: { width, height }, reducedMotion: 'reduce' });
+  const page = await context.newPage();
+  const errors = [];
+  page.on('pageerror', (error) => errors.push(error.message));
+  await page.goto('http://localhost:3000/', { waitUntil: 'networkidle' });
+  await page.evaluate(async () => {
+    await document.fonts.ready;
+    const visibleImages = [...document.images].filter((image) => {
+      const bounds = image.getBoundingClientRect();
+      return bounds.bottom > 0 && bounds.top < innerHeight;
+    });
+    await Promise.all(visibleImages.map((image) => image.decode().catch(() => {})));
+  });
+  await page.waitForTimeout(400);
+  assert.equal(await page.locator('html').getAttribute('lang'), 'uk');
+  assert.equal(await page.locator('h1').count(), 1);
+  assert.match(await page.locator('meta[name="robots"]').getAttribute('content'), /noindex/);
+  assert.equal(await page.locator('a[href*="t.me/"]').count(), 0);
+  assert.equal((await page.locator('body').innerText()).toLowerCase().includes('telegram'), false);
+  assert.deepEqual(errors, []);
+  fs.mkdirSync(path.dirname(filename), { recursive: true });
+  await page.screenshot({ path: filename, fullPage: false, animations: 'disabled' });
+  await context.close();
+}
+
+async function main() {
+  const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM } : {}) });
+  try {
+    await capture(browser, 1440, 900, path.resolve('artifacts/progress/stage-12-desktop.png'));
+    await capture(browser, 390, 844, path.resolve('artifacts/progress/stage-12-mobile.png'));
+    console.log('Captured preview screenshots at 1440×900 and 390×844.');
+  } finally { await browser.close(); }
+}
+
+main().catch((error) => { console.error(error); process.exitCode = 1; });
