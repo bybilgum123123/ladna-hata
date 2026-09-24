@@ -13,6 +13,9 @@ export const metadata = {
   metadataBase: siteBase,
   title,
   description,
+  verification: {
+    google: '1wNQtBHRgzpoya1nLbjCIZOQAokauZ63jaWszWAU6mI',
+  },
   alternates: siteBase ? { canonical: new URL('/', siteBase).toString() } : undefined,
   openGraph: {
     title,

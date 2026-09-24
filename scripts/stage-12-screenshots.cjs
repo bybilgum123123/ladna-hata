@@ -21,6 +21,7 @@ async function capture(browser, width, height, filename) {
   assert.equal(await page.locator('html').getAttribute('lang'), 'uk');
   assert.equal(await page.locator('h1').count(), 1);
   assert.match(await page.locator('meta[name="robots"]').getAttribute('content'), /noindex/);
+  assert.equal(await page.locator('meta[name="google-site-verification"]').getAttribute('content'), '1wNQtBHRgzpoya1nLbjCIZOQAokauZ63jaWszWAU6mI');
   assert.equal(await page.locator('a[href*="t.me/"]').count(), 0);
   assert.equal((await page.locator('body').innerText()).toLowerCase().includes('telegram'), false);
   assert.deepEqual(errors, []);
@@ -32,8 +33,8 @@ async function capture(browser, width, height, filename) {
 async function main() {
   const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM } : {}) });
   try {
-    await capture(browser, 1440, 900, path.resolve('artifacts/progress/stage-12-desktop.png'));
-    await capture(browser, 390, 844, path.resolve('artifacts/progress/stage-12-mobile.png'));
+    await capture(browser, 1440, 900, path.resolve('artifacts/progress/stage-12-desktop-r2.png'));
+    await capture(browser, 390, 844, path.resolve('artifacts/progress/stage-12-mobile-r2.png'));
     console.log('Captured preview screenshots at 1440×900 and 390×844.');
   } finally { await browser.close(); }
 }
