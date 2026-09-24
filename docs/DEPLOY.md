@@ -18,8 +18,8 @@ Production-сервер откроется на `http://localhost:3000`. Что�
 
 | Переменная | Значение |
 |---|---|
-| `NEXT_PUBLIC_SITE_URL` | Подтверждённый HTTPS origin, например `https://ваш-домен` без пути и завершающих страниц |
-| `SITE_INDEXABLE` | `true` только после утверждения сайта к публичному запуску; для preview оставить `false` |
+| `NEXT_PUBLIC_SITE_URL` | Подтверждённый HTTPS origin без пути. Для production Vercel по умолчанию используется `https://www.ladnahata.com.ua`; переменная позволяет явно задать этот же origin. |
+| `SITE_INDEXABLE` | `true` включает индексацию; на Vercel production она включена по умолчанию. Для preview оставить `false`. |
 
 Это публичные настройки, секретов сайта в них нет. Значения `NEXT_PUBLIC_SITE_URL` и `SITE_INDEXABLE` встраиваются при сборке, поэтому после их изменения production build нужно выполнить заново. Команды хостинга:
 

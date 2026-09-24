@@ -2,6 +2,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const shouldIndex = process.env.EXPECT_INDEXABLE === 'true';
 
 async function capture(browser, width, height, filename) {
   const context = await browser.newContext({ viewport: { width, height }, reducedMotion: 'reduce' });
@@ -20,7 +21,13 @@ async function capture(browser, width, height, filename) {
   await page.waitForTimeout(400);
   assert.equal(await page.locator('html').getAttribute('lang'), 'uk');
   assert.equal(await page.locator('h1').count(), 1);
-  assert.match(await page.locator('meta[name="robots"]').getAttribute('content'), /noindex/);
+  const robotsContent = await page.locator('meta[name="robots"]').getAttribute('content');
+  if (shouldIndex) {
+    assert.match(robotsContent, /index, follow/);
+    assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'), 'https://www.ladnahata.com.ua');
+  } else {
+    assert.match(robotsContent, /noindex, nofollow/);
+  }
   assert.equal(await page.locator('meta[name="google-site-verification"]').getAttribute('content'), '1wNQtBHRgzpoya1nLbjCIZOQAokauZ63jaWszWAU6mI');
   assert.equal(await page.locator('a[href*="t.me/"]').count(), 0);
   assert.equal((await page.locator('body').innerText()).toLowerCase().includes('telegram'), false);
@@ -33,9 +40,9 @@ async function capture(browser, width, height, filename) {
 async function main() {
   const browser = await chromium.launch({ headless: true, ...(process.env.PLAYWRIGHT_CHROMIUM ? { executablePath: process.env.PLAYWRIGHT_CHROMIUM } : {}) });
   try {
-    await capture(browser, 1440, 900, path.resolve('artifacts/progress/stage-12-desktop-r2.png'));
-    await capture(browser, 390, 844, path.resolve('artifacts/progress/stage-12-mobile-r2.png'));
-    console.log('Captured preview screenshots at 1440×900 and 390×844.');
+    await capture(browser, 1440, 900, path.resolve('artifacts/progress/stage-12-desktop-r3.png'));
+    await capture(browser, 390, 844, path.resolve('artifacts/progress/stage-12-mobile-r3.png'));
+    console.log(`Captured ${shouldIndex ? 'production' : 'preview'} screenshots at 1440×900 and 390×844.`);
   } finally { await browser.close(); }
 }
 
