@@ -252,3 +252,15 @@
   .service-bento__price-number { opacity: 1 !important; translate: none !important; }
   .contact-form__actions .button, .contact-channels a, .contact-channels button { transition: none; transform: none !important; translate: none !important; }
 }
+
+.not-found { display: flex; min-height: 100dvh; flex-direction: column; padding-block: 28px 72px; }
+.not-found__content { width: min(100%, 730px); margin: auto 0; padding-block: 72px; }
+.not-found__content .eyebrow { margin-bottom: 26px; }
+.not-found h1 { max-width: 10ch; margin: 0; color: var(--forest); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(56px, 7vw, 100px); font-weight: 400; letter-spacing: -.065em; line-height: .98; }
+.not-found__content > p:not(.eyebrow) { max-width: 43ch; margin: 26px 0 0; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.not-found__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+@media (max-width: 760px) {
+  .not-found { padding-block: 20px 48px; }
+  .not-found__content { padding-block: 65px; }
+  .not-found h1 { font-size: clamp(50px, 12vw, 76px); }
+}

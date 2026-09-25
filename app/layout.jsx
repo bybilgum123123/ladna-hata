@@ -2,6 +2,8 @@ import './globals.css';
 import './polish.css';
 import './visual-v2.css';
 import './sections.css';
+import './BrandMark.css';
+import './HeaderActions.css';
 import { LocaleProvider } from './locale';
 import { siteBase, siteIndexable } from './site-config';
 
@@ -33,10 +35,10 @@ export const metadata = {
     description,
     ...(shareImage ? { images: [shareImage] } : {}),
   },
-  robots: {
-    index: siteIndexable,
-    follow: siteIndexable,
-    googleBot: { index: siteIndexable, follow: siteIndexable },
+  robots: siteIndexable ? undefined : {
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false },
   },
 };
 

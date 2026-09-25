@@ -1,0 +1,29 @@
+.brand-mark { display: inline-flex; align-items: center; gap: 12px; min-width: 0; width: max-content; max-width: 100%; color: inherit; text-decoration: none; }
+.brand-mark__icon { display: grid; flex: none; width: 51px; height: 51px; place-items: center; overflow: hidden; border: 1px solid #9e936f; border-radius: 13px; color: #f3efdf; background: #233d2e; box-shadow: inset 0 1px rgb(255 255 255 / 13%); transition: translate 280ms ease, border-color 280ms ease, box-shadow 280ms ease; }
+.brand-mark__icon svg { display: block; width: 100%; height: 100%; }
+.brand-mark__copy { display: flex; min-width: 0; flex-direction: column; justify-content: center; gap: 4px; }
+.brand-mark__name { display: block; color: currentColor; font-family: Georgia, 'Times New Roman', serif; font-size: 23px; font-weight: 400; letter-spacing: -.055em; line-height: 1; white-space: nowrap; }
+.brand-mark__tagline { display: block; color: color-mix(in srgb, currentColor 70%, transparent); font-size: 10px; font-weight: 520; letter-spacing: .015em; line-height: 1.3; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .brand-mark:hover .brand-mark__icon { translate: 0 -2px; border-color: #c4a871; box-shadow: 0 8px 18px rgb(31 57 37 / 17%), inset 0 1px rgb(255 255 255 / 18%); }
+}
+@media (max-width: 1100px) {
+  .brand-mark { gap: 10px; }
+  .brand-mark__icon { width: 45px; height: 45px; }
+  .brand-mark__name { font-size: 21px; }
+  .brand-mark__tagline { font-size: 9.5px; }
+}
+@media (max-width: 760px) {
+  .brand-mark__icon { width: 41px; height: 41px; border-radius: 11px; }
+  .brand-mark__name { font-size: 19px; }
+  .brand-mark__tagline { max-width: 175px; font-size: 9px; }
+}
+@media (max-width: 390px) {
+  .brand-mark { gap: 8px; }
+  .brand-mark__icon { width: 37px; height: 37px; border-radius: 9px; }
+  .brand-mark__name { font-size: 17px; }
+  .brand-mark__tagline { max-width: 124px; font-size: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brand-mark__icon { transition: none; }
+}

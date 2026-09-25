@@ -63,17 +63,16 @@ async function main() {
       });
       await page.evaluate(async () => {
         for (const image of [...document.images]) {
+          if (image.closest('dialog:not([open])')) continue;
           image.scrollIntoView({ block: 'center', behavior: 'instant' });
-          await new Promise((resolve) => {
-            if (image.complete) return resolve();
-            const timer = setTimeout(resolve, 3000);
-            image.addEventListener('load', () => { clearTimeout(timer); resolve(); }, { once: true });
-            image.addEventListener('error', () => { clearTimeout(timer); resolve(); }, { once: true });
-          });
+          await Promise.race([
+            image.decode().catch(() => {}),
+            new Promise((resolve) => setTimeout(resolve, 10000)),
+          ]);
         }
         window.scrollTo({ top: 0, behavior: 'instant' });
       });
-      initial.imagesFailed = await page.locator('img').evaluateAll((images) => images.filter((image) => !image.complete || !image.naturalWidth).map((image) => image.currentSrc));
+      initial.imagesFailed = await page.locator('img').evaluateAll((images) => images.filter((image) => !image.closest('dialog:not([open])') && !image.naturalWidth).map((image) => image.currentSrc));
       initial.performance = await page.evaluate(() => ({ ...window.__seoVitals, ttfb: Math.round(performance.getEntriesByType('navigation')[0].responseStart), dcl: Math.round(performance.getEntriesByType('navigation')[0].domContentLoadedEventEnd) }));
       if (width === 390) {
         await page.getByRole('button', { name: 'РУС' }).click();

@@ -1,0 +1,38 @@
+.site-header .header-actions { display: flex; align-items: center; justify-self: end; gap: 13px; }
+.site-header .locale-switch { display: inline-flex; align-items: center; gap: 3px; padding: 3px; border: 1px solid #c9cfbf; border-radius: 11px; color: #455b47; background: #e9ecdf; box-shadow: inset 0 1px rgb(255 255 255 / 70%); }
+.site-header .locale-switch button { display: inline-grid; min-width: 43px; min-height: 36px; place-items: center; padding: 0 9px; border: 1px solid transparent; border-radius: 8px; color: #526353; background: transparent; cursor: pointer; font-size: 10px; font-weight: 720; letter-spacing: .045em; transition: color 220ms ease, background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+.site-header .locale-switch button[aria-pressed="true"] { border-color: #426448; color: #faf7ed; background: #2b4a35; box-shadow: 0 2px 6px rgb(30 56 34 / 18%); }
+.site-header .locale-switch button:not([aria-pressed="true"]):hover { color: #1e3f2b; background: #f5f5e9; }
+.site-header .header-cta { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 15px; padding: 5px 7px 5px 17px; border: 1px solid #355941; border-radius: 9px; color: #faf7ed; background: #274633; box-shadow: 0 4px 12px rgb(28 55 33 / 12%); font-size: 12px; font-weight: 670; line-height: 1.2; text-decoration: none; white-space: nowrap; transition: translate 280ms cubic-bezier(.22,.61,.36,1), color 280ms ease, background-color 280ms ease, border-color 280ms ease, box-shadow 280ms ease; }
+.site-header .header-cta__arrow { display: inline-grid; width: 30px; height: 30px; flex: none; place-items: center; border: 1px solid rgb(236 232 201 / 36%); border-radius: 6px; color: #e6d4a8; font-size: 15px; font-weight: 400; transition: translate 280ms ease, border-color 280ms ease; }
+.site-header .header-cta:hover { border-color: #7b986d; color: #fffdf2; background: #355a40; box-shadow: 0 9px 19px rgb(28 55 33 / 20%); }
+.site-header .header-cta:hover .header-cta__arrow { border-color: rgb(236 232 201 / 62%); }
+.site-header .locale-switch button:focus-visible, .site-header .header-cta:focus-visible, .site-header .mobile-menu-toggle:focus-visible { outline: 2px solid #b1955e; outline-offset: 3px; }
+.site-header .mobile-menu-toggle { border: 1px solid #b9c5b2; border-radius: 9px; color: #274633; background: #e9ecdf; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .site-header .header-cta:hover { translate: 0 -2px; }
+  .site-header .header-cta:hover .header-cta__arrow { translate: 1px -1px; }
+  .site-header .mobile-menu-toggle:hover { border-color: #7b986d; background: #f4f4e9; }
+}
+@media (max-width: 1100px) {
+  .site-header .header-actions { gap: 9px; }
+  .site-header .header-cta { gap: 9px; padding-left: 13px; font-size: 11px; }
+}
+@media (max-width: 760px) {
+  .site-header { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; grid-template-rows: auto auto; align-items: center; column-gap: 8px; row-gap: 9px; min-height: 0; padding-block: 11px 12px; }
+  .site-header .brand-mark { grid-column: 1; grid-row: 1; }
+  .site-header .header-actions { display: contents; }
+  .site-header .locale-switch { grid-column: 2; grid-row: 1; }
+  .site-header .locale-switch button { min-width: 36px; min-height: 34px; padding-inline: 5px; font-size: 9px; }
+  .site-header .header-cta { grid-column: 1 / -1; grid-row: 2; justify-self: stretch; min-height: 42px; justify-content: space-between; padding-left: 14px; font-size: 11px; }
+  .site-header .header-cta__arrow { width: 28px; height: 28px; }
+  .site-header .mobile-menu-toggle { grid-column: 3; grid-row: 1; display: inline-flex; min-width: 42px; min-height: 42px; justify-content: center; padding: 0 8px; }
+}
+@media (max-width: 390px) {
+  .site-header { column-gap: 5px; }
+  .site-header .locale-switch button { min-width: 33px; padding-inline: 3px; }
+  .site-header .mobile-menu-toggle { min-width: 40px; min-height: 40px; padding-inline: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-header .locale-switch button, .site-header .header-cta, .site-header .header-cta__arrow { transition: none; translate: none !important; }
+}

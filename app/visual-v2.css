@@ -16,18 +16,13 @@
 .mobile-menu__contacts { display: flex; flex-wrap: wrap; gap: 8px 17px; margin-top: 40px; }
 .mobile-menu__contacts a { min-height: 44px; align-content: center; color: #dce7d9; font-size: 12px; }
 
-.hero__eyebrow, .hero__description, .hero__actions, .rotating-accent { animation: hero-enter 850ms both cubic-bezier(.22,.7,.2,1); }
+.hero__eyebrow, .hero__description, .hero__actions { animation: hero-enter 850ms both cubic-bezier(.22,.7,.2,1); }
 .hero__description { animation-delay: 120ms; }
 .hero__actions { animation-delay: 230ms; }
-.rotating-accent { animation-delay: 350ms; }
 @keyframes hero-enter { from { opacity: 0; translate: 0 18px; } to { opacity: 1; translate: 0 0; } }
 .hero__image-frame { translate: var(--hero-x, 0px) var(--hero-y, 0px); transition: translate 500ms cubic-bezier(.22,.7,.2,1); }
 .hero__image { animation: hero-breathe 25s ease-in-out alternate infinite; }
 @keyframes hero-breathe { from { scale: 1; } to { scale: 1.055; } }
-.rotating-accent { display: flex; align-items: center; gap: 7px; min-height: 28px; margin: 35px 0 0; color: #777f72; font-size: 11px; letter-spacing: .035em; }
-.rotating-accent__frame { position: relative; display: inline-flex; min-width: 130px; overflow: hidden; color: var(--forest); font-weight: 650; }
-.rotating-accent__frame span { display: block; animation: rotate-in 420ms both cubic-bezier(.2,.7,.2,1); }
-@keyframes rotate-in { from { opacity: 0; translate: 0 12px; filter: blur(3px); } to { opacity: 1; translate: 0 0; filter: blur(0); } }
 .work-section { padding-bottom: 80px; }
 .scroll-float-heading { margin: 0; font-family: Georgia, serif; font-size: clamp(50px, 6vw, 84px); font-weight: 400; letter-spacing: -.06em; line-height: 1; }
 .proof-section { padding: 100px 0; }
@@ -79,7 +74,6 @@
   .mobile-menu-toggle span:last-child { font-size: 19px; }
   .locale-switch button { min-width: 30px; font-size: 9px; }
   .hero__image-frame { translate: none; }
-  .rotating-accent { margin-top: 23px; }
   .proof-section { padding: 72px 0; }
   .proof-section__inner, .process-section__inner { grid-template-columns: 1fr; gap: 34px; }
   .proof-section__image { min-height: 390px; }
@@ -97,6 +91,6 @@
   .contact-dock__links a { min-width: 42px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero__eyebrow, .hero__description, .hero__actions, .rotating-accent, .hero__image, .rotating-accent__frame span { animation: none !important; }
+  .hero__eyebrow, .hero__description, .hero__actions, .hero__image { animation: none !important; }
   .hero__image-frame { translate: none !important; }
 }

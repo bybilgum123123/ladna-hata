@@ -1,11 +1,11 @@
 "use client";
 import Image from "next/image";
 import AccordionGallery from "./AccordionGallery";
+import BrandMark from "./BrandMark";
 import ContactDock from "./ContactDock";
 import ContactRequest from "./ContactRequest";
 import Faq from "./Faq";
-import MobileMenu from "./MobileMenu";
-import Reviews from "./Reviews";
+import HeaderActions from "./HeaderActions";
 import ScrollExpand from "./ScrollExpand";
 import ScrollFloatHeading from "./ScrollFloatHeading";
 import ScrollReveal from "./ScrollReveal";
@@ -16,20 +16,14 @@ import { contactPhone, messengerChannels } from "./contact-config";
 import { useLocale } from "./locale";
 
 export default function Home() {
-  const { locale, setLocale, t } = useLocale();
+  const { t } = useLocale();
   const navigation = [[t.nav.services, "#services"], [t.nav.prices, "#prices"], [t.nav.works, "#works"], [t.nav.contacts, "#contact"]];
   return <>
     <ScrollReveal />
     <header className="site-header" id="top">
-      <a className="wordmark" href="#top" aria-label="Ладна Хата"><span className="wordmark__symbol" aria-hidden="true">Л</span><span className="wordmark__text"><strong>Ладна</strong> Хата</span></a>
+      <BrandMark />
       <nav className="main-nav" aria-label={t.nav.aria}>{navigation.map(([label, href]) => <a href={href} key={href}>{label}</a>)}</nav>
-      <div className="header-actions">
-        <div className="locale-switch" role="group" aria-label="Мова / Язык">
-          <button type="button" lang="uk" aria-pressed={locale === "uk"} onClick={() => setLocale("uk")}>УКР</button><span aria-hidden="true">/</span><button type="button" lang="ru" aria-pressed={locale === "ru"} onClick={() => setLocale("ru")}>РУС</button>
-        </div>
-        <a className="header-link" href="#contact">{t.nav.discuss}<span aria-hidden="true">↗</span></a>
-        <MobileMenu navigation={navigation} />
-      </div>
+      <HeaderActions navigation={navigation} />
     </header>
     <main>
       <section className="hero page-width" aria-labelledby="hero-title">
@@ -50,7 +44,7 @@ export default function Home() {
       <section className="work-section page-width" id="works" aria-labelledby="works-title"><div className="section-heading"><div><p className="eyebrow"><span aria-hidden="true" />{t.works.aside.join(" ")}</p><ScrollFloatHeading id="works-title" text={t.works.title} /></div></div><AccordionGallery images={galleryImages.slice(0, 6)} /></section>
       <section className="proof-section" aria-labelledby="proof-title"><div className="proof-section__inner page-width"><div className="proof-section__image" data-reveal><Image src="/images/site/bathroom-dark.png" alt={t.proof.photoAlt} fill sizes="(max-width: 768px) 100vw, 43vw" /></div><div className="proof-section__copy"><SplitHeading id="proof-title" text={t.proof.title.join(" ")} /><div className="proof-list">{t.proof.items.map((item) => <p key={item}><span className="editorial-dot" aria-hidden="true" />{item}</p>)}</div></div></div></section>
       <section className="process-section" id="process" aria-labelledby="process-title"><div className="process-section__inner page-width"><div className="process-section__copy"><p className="eyebrow"><span aria-hidden="true" />{t.process.eyebrow}</p><SplitHeading id="process-title" text={t.process.title.join(" ")} /><p>{t.process.description}</p><a className="button button--light" href="#contact">{t.process.ask}<span aria-hidden="true">↗</span></a></div><div className="process-section__image" data-reveal><Image src="/images/site/hero.png" alt={t.process.photoAlt} fill sizes="(max-width: 768px) 100vw, 46vw" /></div></div></section>
-      <Reviews /><Faq />
+      <Faq />
       <section className="contact-section page-width" id="contact" aria-labelledby="contact-title"><div className="contact-section__copy"><p className="eyebrow"><span aria-hidden="true" />{t.contact.eyebrow}</p><SplitHeading id="contact-title" text={t.contact.title} /><p>{t.contact.direct}</p><div className="contact-section__image" data-reveal><Image src="/images/site/bathroom_white.png" alt={t.contact.photoAlt} fill sizes="(max-width: 768px) 100vw, 38vw" /></div></div><ContactRequest /></section>
     </main>
     <ContactDock />
