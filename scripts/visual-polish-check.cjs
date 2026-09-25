@@ -48,7 +48,7 @@ async function main() {
           width: window.innerWidth,
           scrollWidth: document.documentElement.scrollWidth,
           h1: document.querySelectorAll('h1').length,
-          telegramVisible: document.body.innerText.includes('Telegram'),
+          telegramCorrect: document.querySelectorAll('a[href="https://t.me/LadnaHata"]').length > 0,
           failedImages: visibleImages.filter((image) => !image.complete || image.naturalWidth === 0).map((image) => image.currentSrc),
           viber: [...document.querySelectorAll('a[href^="viber:"]')].map((anchor) => anchor.getAttribute('href')),
           whatsapp: [...document.querySelectorAll('a[href^="https://wa.me/"]')].map((anchor) => anchor.getAttribute('href')),
@@ -132,7 +132,7 @@ async function main() {
     checks.push(reducedResult);
     await reduced.close();
     console.log(JSON.stringify(checks, null, 2));
-    if (checks.some((item) => item.errors?.length || item.scrollWidth > item.width + 1 || item.failedImages?.length || item.telegramVisible || item.exactLinks === false || item.viberFallbackVisible === false || item.viberCopyAvailable === false || item.viberCopied === false || item.phoneClickable === false || item.whatsappRequested === false)) {
+    if (checks.some((item) => item.errors?.length || item.scrollWidth > item.width + 1 || item.failedImages?.length || (item.width && item.telegramCorrect === false) || item.exactLinks === false || item.viberFallbackVisible === false || item.viberCopyAvailable === false || item.viberCopied === false || item.phoneClickable === false || item.whatsappRequested === false)) {
       process.exitCode = 1;
     }
   } finally {

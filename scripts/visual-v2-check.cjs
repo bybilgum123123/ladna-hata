@@ -41,11 +41,11 @@ async function main() {
         faq: document.querySelectorAll('.faq-item').length,
         failedImages: [...document.images].filter((image) => !image.closest('dialog') && (!image.complete || !image.naturalWidth)).map((image) => image.src),
         links: {
+          telegram: [...document.querySelectorAll('a[href*="t.me/"]')].map((a) => a.getAttribute('href')),
           viber: [...document.querySelectorAll('a[href^="viber:"]')].map((a) => a.getAttribute('href')),
           whatsapp: [...document.querySelectorAll('a[href^="https://wa.me/"]')].map((a) => a.getAttribute('href')),
           phone: [...document.querySelectorAll('a[href^="tel:"]')].map((a) => a.getAttribute('href')),
         },
-        noTelegram: !document.body.innerText.toLowerCase().includes('telegram') && document.querySelectorAll('a[href*="t.me/"]').length === 0,
         uah: /\bгрн\b|₴/.test(document.body.innerText),
       }));
       checks.errors = errors;
@@ -105,7 +105,7 @@ async function main() {
     }
     console.log(JSON.stringify(results, null, 2));
     const bad = results.some((item) => item.scrollWidth > item.width || item.h1 !== 1 || item.faq !== 9 || item.uah || item.failedImages.length || item.errors.length
-      || !item.noTelegram
+      || item.links.telegram.some((href) => href !== 'https://t.me/LadnaHata')
       || item.links.viber.some((href) => href !== 'viber://chat?number=%2B380988610017')
       || item.links.whatsapp.some((href) => href !== 'https://wa.me/380988610017')
       || item.links.phone.some((href) => href !== 'tel:+380988610017')

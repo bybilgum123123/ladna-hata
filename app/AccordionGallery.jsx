@@ -29,13 +29,6 @@ export default function AccordionGallery({ images }) {
     setActiveIndex((current) => (current + direction + images.length) % images.length);
   }
 
-  function moveImage(event) {
-    if (event.pointerType === 'touch') return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    event.currentTarget.style.setProperty('--image-x', `${((event.clientX - bounds.left) / bounds.width - 0.5) * 12}px`);
-    event.currentTarget.style.setProperty('--image-y', `${((event.clientY - bounds.top) / bounds.height - 0.5) * 12}px`);
-  }
-
   function focusNext(event, index) {
     const direction = event.key === 'ArrowRight' || event.key === 'ArrowDown' ? 1
       : event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 0;
@@ -60,11 +53,6 @@ export default function AccordionGallery({ images }) {
               onClick={(event) => openGallery(index, event.currentTarget)}
               onMouseEnter={() => setActiveIndex(index)}
               onFocus={() => setActiveIndex(index)}
-              onPointerMove={moveImage}
-              onPointerLeave={(event) => {
-                event.currentTarget.style.setProperty('--image-x', '0px');
-                event.currentTarget.style.setProperty('--image-y', '0px');
-              }}
               onKeyDown={(event) => focusNext(event, index)}
             >
               <Image
@@ -72,11 +60,11 @@ export default function AccordionGallery({ images }) {
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
-                sizes="(max-width: 760px) 90vw, (max-width: 1100px) 50vw, 48vw"
+                sizes="(max-width: 760px) 92vw, (max-width: 1100px) 46vw, 60vw"
                 loading="lazy"
               />
               <span className="work-card__label" aria-hidden="true">
-                <span>{String(index + 1).padStart(2, '0')}</span>
+                <span>{String(index + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
                 <span>{image.title}</span>
                 <span>↗</span>
               </span>
@@ -99,7 +87,7 @@ export default function AccordionGallery({ images }) {
       >
         <div className="gallery-dialog__content">
           <div className="gallery-dialog__topline">
-            <span>{String(activeIndex + 1).padStart(2, '0')} / {String(images.length).padStart(2, '0')}</span>
+            <span className="gallery-dots" aria-hidden="true">{images.map((image, index) => <i className={index === activeIndex ? 'is-current' : undefined} key={image.src} />)}</span>
             <button type="button" onClick={closeGallery} aria-label={t.works.close}>{t.works.close} ✕</button>
           </div>
           <Image

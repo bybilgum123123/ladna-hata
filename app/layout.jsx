@@ -1,6 +1,7 @@
 import './globals.css';
 import './polish.css';
 import './visual-v2.css';
+import './sections.css';
 import { LocaleProvider } from './locale';
 import { siteBase, siteIndexable } from './site-config';
 

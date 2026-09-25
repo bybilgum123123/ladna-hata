@@ -42,9 +42,9 @@ export default function MobileMenu({ navigation }) {
           <button type="button" onClick={() => closeMenu()} aria-label={t.nav.close}>✕</button>
         </div>
         <nav aria-label={t.nav.aria}>
-          {navigation.map(([label, href], index) => (
-            <a href={href} key={href} onClick={() => navigateTo(href)} style={{ '--menu-delay': `${index * 55}ms` }}>
-              <small>{String(index + 1).padStart(2, '0')}</small><span>{label}</span><span aria-hidden="true">↗</span>
+          {navigation.map(([label, href]) => (
+            <a href={href} key={href} onClick={() => navigateTo(href)}>
+              <i className="editorial-dot" aria-hidden="true" /><span>{label}</span>
             </a>
           ))}
         </nav>

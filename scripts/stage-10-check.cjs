@@ -8,6 +8,7 @@ const output = path.resolve('artifacts/progress');
 fs.mkdirSync(output, { recursive: true });
 const widths = [360, 390, 430, 768, 1024, 1440, 1920];
 const expectedLinks = {
+  telegram: 'https://t.me/LadnaHata',
   viber: 'viber://chat?number=%2B380988610017',
   whatsapp: 'https://wa.me/380988610017',
   phone: 'tel:+380988610017',
@@ -41,11 +42,12 @@ async function inspectPage(page) {
     faq: document.querySelectorAll('.faq-item').length,
     imagesFailed: [...document.images].filter((node) => !node.closest('dialog') && (!node.complete || !node.naturalWidth)).length,
     links: {
+      telegram: [...document.querySelectorAll('a[href*="t.me/"]')].map((a) => a.getAttribute('href')),
       viber: [...document.querySelectorAll('a[href^="viber:"]')].map((a) => a.getAttribute('href')),
       whatsapp: [...document.querySelectorAll('a[href^="https://wa.me/"]')].map((a) => a.getAttribute('href')),
       phone: [...document.querySelectorAll('a[href^="tel:"]')].map((a) => a.getAttribute('href')),
     },
-    noTelegram: !document.body.innerText.toLowerCase().includes('telegram') && document.querySelectorAll('a[href*="t.me/"]').length === 0,
+    hasTelegram: document.body.innerText.includes('Telegram') && document.querySelectorAll('a[href*="t.me/"]').length > 0,
   }));
 }
 
@@ -75,7 +77,7 @@ async function main() {
       assert.equal(data.galleryCards, 6);
       assert.equal(data.faq, 9);
       assert.equal(data.imagesFailed, 0);
-      assert.equal(data.noTelegram, true);
+      assert.equal(data.hasTelegram, true);
       for (const [kind, href] of Object.entries(expectedLinks)) {
         assert.ok(data.links[kind].length >= 2, kind + ' missing at ' + width);
         assert.ok(data.links[kind].every((value) => value === href), kind + ' href mismatch');

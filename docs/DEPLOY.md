@@ -4,6 +4,10 @@
 
 Требуются Node.js 24 и pnpm 11 (версии закреплены в проекте).
 
+Для просмотра во время работы запустите `pnpm preview` и откройте `http://localhost:3001`.
+Этот сервер использует `.next-preview`, отдельно от production-сборки `.next`, поэтому `pnpm build` не удаляет его CSS/JS.
+Не пересобирайте `.next` при запущенном `pnpm start`: сначала остановите production-сервер, затем выполните build и запустите сервер заново. Иначе старый HTML может ссылаться на уже удалённые хешированные assets.
+
 ```powershell
 pnpm install --frozen-lockfile
 pnpm build

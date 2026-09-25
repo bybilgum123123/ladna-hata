@@ -1,0 +1,437 @@
+{
+  "viewports": [
+    {
+      "width": 360,
+      "uk": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "від 130 $/м²",
+          "від 180 $/м²",
+          "від 20 $/м²",
+          "від 10 $/м²",
+          "від 5 000 грн",
+          "від 500 $/м² по площі підлоги",
+          "від 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "ru": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "от 130 $/м²",
+          "от 180 $/м²",
+          "от 20 $/м²",
+          "от 10 $/м²",
+          "от 5 000 грн",
+          "от 500 $/м² по площади пола",
+          "от 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 390,
+      "uk": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "від 130 $/м²",
+          "від 180 $/м²",
+          "від 20 $/м²",
+          "від 10 $/м²",
+          "від 5 000 грн",
+          "від 500 $/м² по площі підлоги",
+          "від 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "ru": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "от 130 $/м²",
+          "от 180 $/м²",
+          "от 20 $/м²",
+          "от 10 $/м²",
+          "от 5 000 грн",
+          "от 500 $/м² по площади пола",
+          "от 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 430,
+      "uk": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "від 130 $/м²",
+          "від 180 $/м²",
+          "від 20 $/м²",
+          "від 10 $/м²",
+          "від 5 000 грн",
+          "від 500 $/м² по площі підлоги",
+          "від 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "ru": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "от 130 $/м²",
+          "от 180 $/м²",
+          "от 20 $/м²",
+          "от 10 $/м²",
+          "от 5 000 грн",
+          "от 500 $/м² по площади пола",
+          "от 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 768,
+      "uk": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "від 130 $/м²",
+          "від 180 $/м²",
+          "від 20 $/м²",
+          "від 10 $/м²",
+          "від 5 000 грн",
+          "від 500 $/м² по площі підлоги",
+          "від 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "ru": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "от 130 $/м²",
+          "от 180 $/м²",
+          "от 20 $/м²",
+          "от 10 $/м²",
+          "от 5 000 грн",
+          "от 500 $/м² по площади пола",
+          "от 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1024,
+      "uk": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "від 130 $/м²",
+          "від 180 $/м²",
+          "від 20 $/м²",
+          "від 10 $/м²",
+          "від 5 000 грн",
+          "від 500 $/м² по площі підлоги",
+          "від 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "ru": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "от 130 $/м²",
+          "от 180 $/м²",
+          "от 20 $/м²",
+          "от 10 $/м²",
+          "от 5 000 грн",
+          "от 500 $/м² по площади пола",
+          "от 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1280,
+      "uk": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "від 130 $/м²",
+          "від 180 $/м²",
+          "від 20 $/м²",
+          "від 10 $/м²",
+          "від 5 000 грн",
+          "від 500 $/м² по площі підлоги",
+          "від 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "ru": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "от 130 $/м²",
+          "от 180 $/м²",
+          "от 20 $/м²",
+          "от 10 $/м²",
+          "от 5 000 грн",
+          "от 500 $/м² по площади пола",
+          "от 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "uk": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "від 130 $/м²",
+          "від 180 $/м²",
+          "від 20 $/м²",
+          "від 10 $/м²",
+          "від 5 000 грн",
+          "від 500 $/м² по площі підлоги",
+          "від 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "ru": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "от 130 $/м²",
+          "от 180 $/м²",
+          "от 20 $/м²",
+          "от 10 $/м²",
+          "от 5 000 грн",
+          "от 500 $/м² по площади пола",
+          "от 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "errors": []
+    },
+    {
+      "width": 1920,
+      "uk": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "від 130 $/м²",
+          "від 180 $/м²",
+          "від 20 $/м²",
+          "від 10 $/м²",
+          "від 5 000 грн",
+          "від 500 $/м² по площі підлоги",
+          "від 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "ru": {
+        "styles": {
+          "background": "rgb(246, 245, 239)",
+          "font": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
+          "services": "grid",
+          "hero": "rgb(32, 56, 45)",
+          "material": "rgb(53, 75, 56)"
+        },
+        "overflow": false,
+        "brokenImages": [],
+        "priceOverflow": [],
+        "badAnchors": [],
+        "prices": [
+          "от 130 $/м²",
+          "от 180 $/м²",
+          "от 20 $/м²",
+          "от 10 $/м²",
+          "от 5 000 грн",
+          "от 500 $/м² по площади пола",
+          "от 250 $/м²"
+        ],
+        "heroImage": "cover",
+        "heroHeading": "rgb(251, 248, 237)",
+        "horizontalPlanOverflow": false
+      },
+      "errors": []
+    }
+  ],
+  "webglCanvases": 1
+}

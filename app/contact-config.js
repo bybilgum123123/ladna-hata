@@ -5,6 +5,7 @@ export const contactPhone = {
 };
 
 export const messengerChannels = [
+  { name: 'Telegram', href: 'https://t.me/LadnaHata' },
   { name: 'Viber', href: 'viber://chat?number=%2B380988610017' },
   { name: 'WhatsApp', href: `https://wa.me/${contactPhone.whatsappDigits}` },
 ];
